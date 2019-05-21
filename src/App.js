@@ -25,7 +25,7 @@ const App = () => {
       </nav>
       <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route exact path="/dashboard" component={Dashboard} />
         <Suspense fallback={<Loader />}>
           <Route path="/agency-detail" component={AgencyDetails} />
         </Suspense>
