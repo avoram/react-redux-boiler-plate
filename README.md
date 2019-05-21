@@ -65,4 +65,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### `npm run build` fails to minify
 
+### Bolier plate setups
+
+1. Lazy Loading - Using React lazy and suspence
+2. State Management - Redux + Saga (as middleware)
+3. [react-debounce-input](https://www.npmjs.com/package/react-debounce-input) - npm plugin to add input box with debounce option to prevent component rerendering on every input value change
+4. [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) - To add the support of redux dev tool and add it as midldware to applcation
+5. API calls setup
+    a. API calls library - [axios](https://github.com/axios/axios) 
+    b. axios interceptor - To intercept API request and response using axios interceptor. It helps to set                            request headers to all the API calls, setting baseURL for API calls etc.
+6. Loader implementation - Loader state is managed in axios interceptor with count mechanism. For each API                               call count will increase by 1 and after each response it will decrease by 1. So                               stop the loader when count is 0    
+
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
