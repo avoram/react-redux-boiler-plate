@@ -74,6 +74,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 5. API calls setup
     a. API calls library - [axios](https://github.com/axios/axios) 
     b. axios interceptor - To intercept API request and response using axios interceptor. It helps to set                            request headers to all the API calls, setting baseURL for API calls etc.
-6. Loader implementation - Loader state is managed in axios interceptor with count mechanism. For each API                               call count will increase by 1 and after each response it will decrease by 1. So                               stop the loader when count is 0    
+6. Loader implementation - Loader state is managed in axios interceptor with count mechanism. For each API                               call count will increase by 1 and after each response it will decrease by 1. So                               stop the loader when count is 0
+7. Toaster messages implementation - [react-redux-toastr](https://www.npmjs.com/package/react-redux-toastr)
+8. Error handling - 
+    a. component level error handling - [Error Boundary implementation](https://reactjs.org/docs/            error-boundaries.html#introducing-error-boundaries) 
+    b. API calls error handling - Handling at axios response interceptor and showing error toaster message for it
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

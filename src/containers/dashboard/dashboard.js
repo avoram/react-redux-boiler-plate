@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { DebounceInput } from "react-debounce-input";
 
 import {
   CHANGE_USER,
@@ -9,10 +8,8 @@ import {
   GET_USER_DETAILS
 } from "../../store/dashboard/dashboard.const";
 
-// TODO:: Can be removed just for better UI
-const divStyle = {
-  marginTop: "40px"
-};
+import UserHobbies from "../../components/user-hobbies/user-hobbies";
+import UserSkills from "../../components/user-skills/user-skills";
 
 class Dashboard extends Component {
   // TODO:: Define class variable one way of defining local variable
@@ -49,46 +46,23 @@ class Dashboard extends Component {
           <h1>The Logged In User - {this.props.name}</h1>
           <button onClick={this.props.changeUserName}>Change User Name</button>
         </div>
-        <div style={divStyle}>
-          <span>Add User Hobbies</span>
-          <DebounceInput
-            minLength={2}
-            debounceTimeout={300}
-            onChange={event => this.hobbieChangeHandler(event.target.value)}
+          <UserHobbies
+            hobbies={this.props.hobbies}
+            hobbieChangeHandler={value => this.hobbieChangeHandler(value)}
           />
-        </div>
-        <div>
-          <p>User Hobbies :: </p>
-          <ul>
-            {this.props.hobbies.map((value, index) => {
-              return <li key={index}>{value}</li>;
-            })}
-          </ul>
-        </div>
-
-        <div style={divStyle}>
-          <span>Add User Proficient Skills</span>
-          <DebounceInput
-            minLength={2}
-            debounceTimeout={300}
-            onChange={event => this.skillChangeHandler(event.target.value)}
+          <UserSkills
+            proficentSkills={this.props.proficentSkills}
+            skillChangeHandler={value => this.skillChangeHandler(value)}
           />
-        </div>
-        <div>
-          <p>User Skills :: </p>
-            <ul>
-              {this.props.proficentSkills && this.props.proficentSkills.map((value, index) => {
-                return <li key={index}>{value}</li>;
-              })}
-            </ul>
-        </div>
 
-        <button onClick={() => this.props.addNewHobbie(this.state.newHobby)}>
-          Add New Hobbie
-        </button>
-        <button onClick={() => this.props.addNewSkill(this.state.newSkill)}>
-          Add New Skill
-        </button>
+        <section id="dashboard-footer">
+          <button onClick={() => this.props.addNewHobbie(this.state.newHobby)}>
+            Add New Hobbie
+          </button>
+          <button onClick={() => this.props.addNewSkill(this.state.newSkill)}>
+            Add New Skill
+          </button>
+        </section>
       </section>
     );
   }

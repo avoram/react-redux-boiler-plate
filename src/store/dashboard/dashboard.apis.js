@@ -1,5 +1,5 @@
-import axios from "../../environment/axios-interceptor";
-import { CONFIG } from '../../environment/config'
+import axios from "../../utils/axios-interceptor";
+import { CONFIG } from '../../utils/app.config'
 
 export const getHobbies = data => {
   return axios
