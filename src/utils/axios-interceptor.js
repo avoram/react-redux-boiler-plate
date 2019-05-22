@@ -1,5 +1,7 @@
 import axios from "axios";
 import { toastr } from "react-redux-toastr";
+import store from "../store/store";
+import * as loaderConst from "../store/loader/loader.const";
 
 import promise from "promise";
 import { API_BASE_URL, ERROR_MESSAGE_TOASTER } from "./app.config";
@@ -15,16 +17,16 @@ axios.defaults.headers.post["Content-Type"] = "application/json";
 // Add a request interceptor
 axiosInstance.interceptors.request.use(
   // Do something before request is sent
-  //TODO:: Show Loader add here
   function(config) {
     apiCallsCount++;
-    console.log("Show Loader ", apiCallsCount);
+
+    // disptach the action to show loader when api call triggers
+    store.dispatch({ type: loaderConst.SHOW_LOADER });
     return config;
   },
   function(error) {
-
     // Showing error toaster for request error
-    toastr.error(error, {timeOut: ERROR_MESSAGE_TOASTER.timeOut});
+    toastr.error(error, { timeOut: ERROR_MESSAGE_TOASTER.timeOut });
     return promise.reject(error);
   }
 );
@@ -32,23 +34,21 @@ axiosInstance.interceptors.request.use(
 // Add a response interceptor
 axiosInstance.interceptors.response.use(
   function(response) {
-    // Do something with response data
     apiCallsCount--;
-    console.log("apiCallsCount ", apiCallsCount);
-    
     if (apiCallsCount === 0) {
-      console.log("Hide Loader ");
+      // disptach the action to hide loader when no api calls pending
+      store.dispatch({ type: loaderConst.HIDE_LOADER });
     }
     return response.data;
   },
   function(error) {
-    // Do something with response error
-    //TODO:: Hide Loader add here
     apiCallsCount--;
-    console.log("Hide Loader");
+
+    // disptach the action to hide loader when error occurs
+    store.dispatch({ type: loaderConst.HIDE_LOADER });
 
     // Showing error message at interceptor error handler
-    toastr.error(error, {timeOut: ERROR_MESSAGE_TOASTER.timeOut});
+    toastr.error(error, { timeOut: ERROR_MESSAGE_TOASTER.timeOut });
     return Promise.reject(error);
   }
 );

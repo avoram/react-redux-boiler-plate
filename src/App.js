@@ -4,7 +4,7 @@ import "./App.css";
 
 import Dashboard from "./containers/dashboard/dashboard";
 import PageNotFound from "./components/page-not-found/page-not-found";
-import Loader from './components/loader/loader'
+import Loader from './containers/loader/loader'
 
 const AgencyDetails = lazy(() =>
   import("./containers/agency-details/agency-details")
@@ -31,6 +31,7 @@ const App = () => {
         </Suspense>
         <Route component={PageNotFound} />
       </Switch>
+      <Loader></Loader>
     </React.Fragment>
   );
 };

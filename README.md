@@ -79,5 +79,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 8. Error handling - 
     a. component level error handling - [Error Boundary implementation](https://reactjs.org/docs/            error-boundaries.html#introducing-error-boundaries) 
     b. API calls error handling - Handling at axios response interceptor and showing error toaster message for it
+9. Loader implementation - Show loader when making API calls and hide it when no api calls pending. It is   action based implementation from axios interceptor
+
+TODO::
+
+1. Error Boundary check - most of time it still showing error
+2. Use good loader in place of current one
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

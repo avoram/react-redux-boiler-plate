@@ -3,7 +3,7 @@ import update from 'immutability-helper';
 
 const initialState = {
   data: {
-    name: "Test",
+    name: "Test User",
     hobbies: [],
     skills : {}
   }
@@ -11,10 +11,6 @@ const initialState = {
 
 const dashboardReducer = (state = initialState, action) => {
   const actionTypes = {
-    [dashBoardActions.CHANGE_USER]: () => ({
-      ...state,
-      data: { ...state.data, name: "Vora" }
-    }),
     [dashBoardActions.SET_USER_HOBBIES] : () => ({
       ...state,
       data: {...state.data, hobbies: state.data.hobbies.concat(action.payload)}

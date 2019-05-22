@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
 import {
-  CHANGE_USER,
   ADD_HOBBY,
   ADD_SKILL,
   GET_USER_DETAILS
@@ -41,10 +40,9 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <section>
+      <Fragment>
         <div>
-          <h1>The Logged In User - {this.props.name}</h1>
-          <button onClick={this.props.changeUserName}>Change User Name</button>
+          <h2>The Logged In User - {this.props.name}</h2>
         </div>
           <UserHobbies
             hobbies={this.props.hobbies}
@@ -63,7 +61,7 @@ class Dashboard extends Component {
             Add New Skill
           </button>
         </section>
-      </section>
+      </Fragment>
     );
   }
 }
@@ -80,9 +78,6 @@ const mapDispatchToProps = dispatch => {
   return {
     getUserDetails: () => {
       dispatch({ type: GET_USER_DETAILS });
-    },
-    changeUserName: () => {
-      dispatch({ type: CHANGE_USER });
     },
     addNewHobbie: data => {
       dispatch({ type: ADD_HOBBY, payload: data });

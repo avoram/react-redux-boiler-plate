@@ -1,4 +1,3 @@
-export const CHANGE_USER = 'CHANGE_USER';
 export const GET_USER_DETAILS = 'GET_USER_DETAILS';
 export const SET_USER_SKILLS = 'SET_USER_SKILLS';
 export const SET_USER_HOBBIES = 'SET_USER_HOBBIES';

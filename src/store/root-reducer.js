@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import { reducer as toastrReducer } from "react-redux-toastr";
-// import { loadingBarReducer } from "react-redux-loading-bar";
 
-import dashboardReducer from "./dashboard/dashboard.reducer";
+import dashboardReducer from './dashboard/dashboard.reducer';
+import loaderReducer from './loader/loader.reducer';
 
 const rootReducer = combineReducers({
     dashboardReducer,
-    toastr: toastrReducer,
-  // loadingBar: loadingBarReducer
+    loaderReducer: loaderReducer,
+    toastr: toastrReducer
 });
 export default rootReducer;
