@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import { reducer as toastrReducer } from "react-redux-toastr";
 
-import dashboardReducer from './dashboard/dashboard.reducer';
-import loaderReducer from './loader/loader.reducer';
+import dashboardReducer from '../containers/dashboard/dashboard.reducer';
+import loaderReducer from '../containers/loader/loader.reducer';
 
 const rootReducer = combineReducers({
     dashboardReducer,

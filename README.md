@@ -87,5 +87,6 @@ TODO::
 
 1. Error Boundary check - most of time it still showing error
 2. Use good loader in place of current one
+5. Effect also in component
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

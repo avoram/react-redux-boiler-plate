@@ -1,14 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
-import {
-  ADD_HOBBY,
-  ADD_SKILL,
-  GET_USER_DETAILS
-} from "../../store/dashboard/dashboard.const";
-
-import UserHobbies from "./components/user-hobbies/user-hobbies";
-import UserSkills from "./components/user-skills/user-skills";
+import * as dashboardActions from './dashboard.actions';
+import UserHobbies from "./user-hobbies/user-hobbies";
+import UserSkills from "./user-skills/user-skills";
 
 class Dashboard extends Component {
   newSkill = null;
@@ -63,13 +58,13 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getUserDetails: () => {
-      dispatch({ type: GET_USER_DETAILS });
+      dispatch(dashboardActions.getUserDetails());
     },
     addNewHobbie: data => {
-      dispatch({ type: ADD_HOBBY, payload: data });
+      dispatch(dashboardActions.addHobby(data));
     },
     addNewSkill: data => {
-      dispatch({ type: ADD_SKILL, payload: data });
+      dispatch(dashboardActions.addSkill(data));
     }
   };
 };

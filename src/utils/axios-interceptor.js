@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toastr } from "react-redux-toastr";
 import store from "../store/store";
-import * as loaderConst from "../store/loader/loader.const";
+import * as loaderActions from '../containers/loader/loader.actions';
 
 import promise from "promise";
 import { API_BASE_URL, ERROR_MESSAGE_TOASTER } from "./app.config";
@@ -21,7 +21,7 @@ axiosInstance.interceptors.request.use(
     apiCallsCount++;
 
     // disptach the action to show loader when api call triggers
-    store.dispatch({ type: loaderConst.SHOW_LOADER });
+    store.dispatch(loaderActions.showLoader());
     return config;
   },
   function(error) {
@@ -37,7 +37,7 @@ axiosInstance.interceptors.response.use(
     apiCallsCount--;
     if (apiCallsCount === 0) {
       // disptach the action to hide loader when no api calls pending
-      store.dispatch({ type: loaderConst.HIDE_LOADER });
+      store.dispatch(loaderActions.hideLoader());
     }
     return response.data;
   },
@@ -45,7 +45,7 @@ axiosInstance.interceptors.response.use(
     apiCallsCount--;
 
     // disptach the action to hide loader when error occurs
-    store.dispatch({ type: loaderConst.HIDE_LOADER });
+    store.dispatch(loaderActions.hideLoader());
 
     // Showing error message at interceptor error handler
     toastr.error(error, { timeOut: ERROR_MESSAGE_TOASTER.timeOut });
