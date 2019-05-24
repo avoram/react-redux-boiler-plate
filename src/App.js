@@ -14,7 +14,7 @@ const App = () => {
   return (
     <React.Fragment>
       <nav>
-        <ul style={{ listStyle: "none", margin: "auto", padding: "0" }}>
+        <ul style={{ listStyle: "none", margin: "auto", padding: "0", float: "right"}}>
           <li style={{ margin: "10px", display: "inline-block" }}>
             <NavLink to="/dashboard">Dashboard</NavLink>
           </li>

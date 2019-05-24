@@ -67,19 +67,21 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 ### Bolier plate setups
 
-1. Lazy Loading - Using React lazy and suspence
-2. State Management - Redux + Saga (as middleware)
-3. [react-debounce-input](https://www.npmjs.com/package/react-debounce-input) - npm plugin to add input box with debounce option to prevent component rerendering on every input value change
-4. [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) - To add the support of redux dev tool and add it as midldware to applcation
-5. API calls setup
+1. React boiler plater v16.8 using create-react-app
+2. Lazy Loading - Using React lazy and suspence
+3. State Management - Redux + Saga (as middleware)
+4. [react-debounce-input](https://www.npmjs.com/package/react-debounce-input) - npm plugin to add input box with debounce option to prevent component rerendering on every input value change
+5. [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) - To add the support of redux dev tool and add it as midldware to applcation
+6. API calls setup
     a. API calls library - [axios](https://github.com/axios/axios) 
     b. axios interceptor - To intercept API request and response using axios interceptor. It helps to set                            request headers to all the API calls, setting baseURL for API calls etc.
-6. Loader implementation - Loader state is managed in axios interceptor with count mechanism. For each API                               call count will increase by 1 and after each response it will decrease by 1. So                               stop the loader when count is 0
-7. Toaster messages implementation - [react-redux-toastr](https://www.npmjs.com/package/react-redux-toastr)
-8. Error handling - 
+7. Loader implementation - Loader state is managed in axios interceptor with count mechanism. For each API                               call count will increase by 1 and after each response it will decrease by 1. So                               stop the loader when count is 0
+8. Toaster messages implementation - [react-redux-toastr](https://www.npmjs.com/package/react-redux-toastr)
+9. Error handling - 
     a. component level error handling - [Error Boundary implementation](https://reactjs.org/docs/            error-boundaries.html#introducing-error-boundaries) 
     b. API calls error handling - Handling at axios response interceptor and showing error toaster message for it
-9. Loader implementation - Show loader when making API calls and hide it when no api calls pending. It is   action based implementation from axios interceptor
+10. Loader implementation - Show loader when making API calls and hide it when no api calls pending. It is   action based implementation from axios interceptor
+11. React memo - functional components can bail out from rendering when their input props are the same and lazy load such components. Helps performance optimisation. 
 
 TODO::
 

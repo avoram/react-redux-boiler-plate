@@ -6,7 +6,8 @@ const divStyle = {
   marginTop: "40px"
 };
 
-const UserSkills = (props) => (
+const UserSkills = (props) => {
+  return (
   <section>
     <div style={divStyle}>
       <span>Add User Proficient Skills</span>
@@ -26,6 +27,8 @@ const UserSkills = (props) => (
       </ul>
     </div>
   </section>
-);
+)
+};
 
-export default UserSkills;
+const MemoizedUserSkills = React.memo(UserSkills);
+export default MemoizedUserSkills;

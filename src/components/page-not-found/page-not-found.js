@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const PageNotFound = () => (
-    <h1 style={{textAlign: 'center'}}>Page not found</h1>
-);
+const PageNotFound = () => {
+  return <h1 style={{ textAlign: "center" }}>Page not found</h1>;
+};
 
-export default PageNotFound;
+/* 
+  Using react memo to avoid unnecessary rendering when parent component rerenders 
+  and nothing updated for this component
+*/
+const MemoizedPageNotFound = React.memo(PageNotFound);
+export default MemoizedPageNotFound;

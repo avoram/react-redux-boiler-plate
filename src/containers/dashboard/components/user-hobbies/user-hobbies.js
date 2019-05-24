@@ -29,4 +29,10 @@ const UserHobbies = props => {
   );
 };
 
-export default UserHobbies;
+/* 
+  Using react memo to avoid unnecessary rendering when parent component rerenders 
+  and nothing updated for this component
+*/
+const MemoizedUserHobbies = React.memo(UserHobbies);
+export default MemoizedUserHobbies;
+

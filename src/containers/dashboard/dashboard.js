@@ -7,35 +7,22 @@ import {
   GET_USER_DETAILS
 } from "../../store/dashboard/dashboard.const";
 
-import UserHobbies from "../../components/user-hobbies/user-hobbies";
-import UserSkills from "../../components/user-skills/user-skills";
+import UserHobbies from "./components/user-hobbies/user-hobbies";
+import UserSkills from "./components/user-skills/user-skills";
 
 class Dashboard extends Component {
-  // TODO:: Define class variable one way of defining local variable
-  //   newSkill = null;
-  //   newHobby = null;
-
-  // Defining local state
-  state = {
-    newSkill: "",
-    newHobby: ""
-  };
+  newSkill = null;
+  newHobby = null;
   componentDidMount() {
     this.props.getUserDetails();
   }
 
   hobbieChangeHandler = value => {
-    // TODO:: Can be removed just for better UI
-
-    // One way of doing
-    // this.newHobby = value;
-
-    this.setState({ newHobby: value });
+    this.newHobby = value;
   };
 
   skillChangeHandler = value => {
-    // this.newSkill = value;
-    this.setState({ newSkill: value });
+    this.newSkill = value;
   };
 
   render() {
@@ -44,20 +31,19 @@ class Dashboard extends Component {
         <div>
           <h2>The Logged In User - {this.props.name}</h2>
         </div>
-          <UserHobbies
-            hobbies={this.props.hobbies}
-            hobbieChangeHandler={value => this.hobbieChangeHandler(value)}
-          />
-          <UserSkills
-            proficentSkills={this.props.proficentSkills}
-            skillChangeHandler={value => this.skillChangeHandler(value)}
-          />
-
+        <UserHobbies
+          hobbies={this.props.hobbies}
+          hobbieChangeHandler={this.hobbieChangeHandler}
+        />
+        <UserSkills
+          proficentSkills={this.props.proficentSkills}
+          skillChangeHandler={this.skillChangeHandler}
+        />
         <section id="dashboard-footer">
-          <button onClick={() => this.props.addNewHobbie(this.state.newHobby)}>
+          <button onClick={() => this.props.addNewHobbie(this.newHobby)}>
             Add New Hobbie
           </button>
-          <button onClick={() => this.props.addNewSkill(this.state.newSkill)}>
+          <button onClick={() => this.props.addNewSkill(this.newSkill)}>
             Add New Skill
           </button>
         </section>
