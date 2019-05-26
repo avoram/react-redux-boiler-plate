@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 
-import * as dashboardActions from './dashboard.actions';
+import * as dashboardActions from "./dashboard.actions";
 import UserHobbies from "./user-hobbies/user-hobbies";
 import UserSkills from "./user-skills/user-skills";
+import ErrorBoundary from "../../containers/error-boundary/error-boundary";
 
 class Dashboard extends Component {
   newSkill = null;
@@ -26,10 +27,13 @@ class Dashboard extends Component {
         <div>
           <h2>The Logged In User - {this.props.name}</h2>
         </div>
-        <UserHobbies
-          hobbies={this.props.hobbies}
-          hobbieChangeHandler={this.hobbieChangeHandler}
-        />
+        <ErrorBoundary>
+          <UserHobbies
+            hobbies={this.props.hobbies}
+            hobbieChangeHandler={this.hobbieChangeHandler}
+          />
+        </ErrorBoundary>
+
         <UserSkills
           proficentSkills={this.props.proficentSkills}
           skillChangeHandler={this.skillChangeHandler}

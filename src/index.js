@@ -10,15 +10,13 @@ import "react-redux-toastr/lib/css/react-redux-toastr.min.css";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import ErrorBoundary from "./containers/error-boundary/error-boundary";
+
 import store from "./store/store";
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <ErrorBoundary>
-        <App />
-      </ErrorBoundary>
+      <App />
     </BrowserRouter>
     <ReduxToastr
       timeOut={4000}

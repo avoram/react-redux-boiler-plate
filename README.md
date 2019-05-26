@@ -82,11 +82,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
     b. API calls error handling - Handling at axios response interceptor and showing error toaster message for it
 10. Loader implementation - Show loader when making API calls and hide it when no api calls pending. It is   action based implementation from axios interceptor
 11. React memo - functional components can bail out from rendering when their input props are the same and lazy load such components. Helps performance optimisation. 
+12. Create build and deploy to firebase - npm run build and then firebase deploy
 
 TODO::
 
 1. Error Boundary check - most of time it still showing error
-2. Use good loader in place of current one
-5. Effect also in component
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
