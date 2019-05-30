@@ -24,7 +24,7 @@ const App = () => {
         </ul>
       </nav>
       <Switch>
-        <Route exact path="/" component={Dashboard} />
+        <Route path="/" component={Dashboard} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Suspense fallback={<Loader />}>
           <Route path="/agency-detail" component={AgencyDetails} />
