@@ -10,7 +10,7 @@ const UserSkills = (props) => {
   return (
   <section>
     <div style={divStyle}>
-      <span>Add User Proficient Skills</span>
+      <span tabIndex = "0">Add User Proficient Skills</span>
       <DebounceInput
         minLength={2}
         debounceTimeout={300}
@@ -22,7 +22,7 @@ const UserSkills = (props) => {
       <ul>
         {props.proficentSkills &&
           props.proficentSkills.map((value, index) => {
-            return <li key={index}>{value}</li>;
+            return <li tabIndex = "0" key={index}>{value}</li>;
           })}
       </ul>
     </div>

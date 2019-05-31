@@ -92,15 +92,19 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 11. Create build and deploy to firebase - npm run build and then firebase deploy
 12. [react-debounce-input](https://www.npmjs.com/package/react-debounce-input) - npm plugin to add input box with debounce option to prevent component rerendering on every input value change
 13. [redux-devtools-extension](https://github.com/zalmoxisus/redux-devtools-extension) - To add the support of redux dev tool and add it as midldware to applcation
+14. Accessibility - 
+        a) Added support of accessing web page with keyboard only. (Used tabIndex for accessing non accessible item)
 
 TODO::
 
-1. Style architect - Add CSS Module and check deep level scss class with component and Sass configuration (variables, mixins, component level scss)
+1. Style architect - Add styled component or CSS Module and check deep level scss class with component and Sass configuration (variables, mixins, component level scss)
 2. Add React forms
 3. Environment configuration - Dev and Prod
 4. Lint defination to be added to HTML, CSS and JS
 5. Git Add Hooks for Linting check
 6. Responsive design setup
+7. Localization
+8. Accessibility - image alt text, semantic tags
 
 
 

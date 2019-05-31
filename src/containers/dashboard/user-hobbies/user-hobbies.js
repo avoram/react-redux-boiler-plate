@@ -18,10 +18,10 @@ const UserHobbies = props => {
         />
       </div>
       <div>
-        <p>User Hobbies :: </p>
+        <p tabIndex = "0">User Hobbies :: </p>
         <ul>
           {props.hobbies.map((value, index) => {
-            return <li key={index}>{value}</li>;
+            return <li tabIndex = "0" key={index}>{value}</li>;
           })}
         </ul>
       </div>
