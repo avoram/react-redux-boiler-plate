@@ -1,26 +1,15 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import styled from 'styled-components';
 
 import * as dashboardActions from "./dashboard.actions";
 import UserHobbies from "./user-hobbies/user-hobbies";
 import UserSkills from "./user-skills/user-skills";
 import ErrorBoundary from "../../containers/error-boundary/error-boundary";
 
-const DashboardContainer = styled.div`
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: red;
-    border: thin solid #adadad;
-`;
-
 class Dashboard extends Component {
   newSkill = null;
   newHobby = null;
   componentDidMount() {
-    console.log('this.props ', this.props)
     this.props.getUserDetails();
   }
 
@@ -35,13 +24,9 @@ class Dashboard extends Component {
   render() {
     return (
       <Fragment>
-        <DashboardContainer>
         <div>
-          <h2>This style is using a styled component</h2>
-          <h3>The Logged In User - {this.props.name}</h3>
+          <h2>The Logged In User - {this.props.name}</h2>
         </div>
-        </DashboardContainer>
-       
         <ErrorBoundary>
           <UserHobbies
             hobbies={this.props.hobbies}
